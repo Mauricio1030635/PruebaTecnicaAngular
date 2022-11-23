@@ -1,0 +1,26 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="Validar()" autocomplete="off">
+    <mat-form-field class="example-full-width">                    
+      <mat-label [class.Exito]="this.form.get('Usuario')?.valid" >Usuario</mat-label>
+      <input formControlName="Usuario" matInput  placeholder="Ingrese Usuario..." required >
+    </mat-form-field>              
+    
+    <mat-form-field class="example-full-width">
+        <mat-label [class.Exito]="this.form.get('PassUsuario')?.valid" >Password</mat-label>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="PassUsuario" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>                    
+        </mat-form-field>
+        <!-- <mat-form-field class="example-full-width">
+            <mat-label [class.Exito]="this.form.get('ConfirmPassUsuario')?.valid" >Confirmar Password</mat-label>
+            <input matInput placeholder="Confirmar Password" [type]="hide ? 'password' : 'text'" formControlName="ConfirmPassUsuario" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>                    
+            </mat-form-field> -->
+
+        <br>
+        
+        <div class="text-center text-lg-start mt-4 pt-2 d-flex flex-row-reverse">             
+            <button [disabled]="this.form.invalid" type="submit" class="btn btn-primary">
+                Guardar
+          </button>   &nbsp; &nbsp;&nbsp;         
+          <button class="btn btn-danger" mat-dialog-close>Cerrar</button>
+        </div> 
+    </form>    

@@ -1,0 +1,44 @@
+<form class="example-form" [formGroup]="form" (ngSubmit)="Validar()" autocomplete="off">
+    <mat-form-field class="example-full-width">                    
+      <mat-label [class.Exito]="this.form.get('NombresPersona')?.valid" >Nombres Persona</mat-label>
+      <input formControlName="NombresPersona" matInput  placeholder="Ingrese Nombres Persona..." required >
+    </mat-form-field>              
+    
+
+    <mat-form-field class="example-full-width">                    
+        <mat-label [class.Exito]="this.form.get('ApellidosPersona')?.valid" >Apellidos Persona</mat-label>
+        <input formControlName="ApellidosPersona" matInput  placeholder="Ingrese Apellidos Persona..." required >
+      </mat-form-field> 
+   
+            
+      <mat-form-field class="example-full-width">
+        <mat-label [class.Exito]="this.form.get('NumIdentificacionPersona')?.valid" ># IdentificacionPersona</mat-label>
+        <span matPrefix> &nbsp;</span>
+        <input type="text" matInput  formControlName="NumIdentificacionPersona" placeholder="555-555-1234">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">                    
+        <mat-label [class.Exito]="this.form.get('EmailPersona')?.valid" >Email Persona</mat-label>
+        <input type="email"  formControlName="EmailPersona" matInput  placeholder="Ingrese Email Persona..." required >
+      </mat-form-field> 
+    
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label [class.Exito]="this.form.get('Tipo Identificacion')?.valid" >Tipo de documento</mat-label>
+        <mat-select formControlName="TipoIdentificacionPersona">
+          <mat-option   *ngFor="let Tipo of Tipos" [value]="Tipo.value" >
+            {{Tipo.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>       
+
+        <br>
+        
+        <div class="text-center text-lg-start mt-4 pt-2 d-flex flex-row-reverse">             
+            <button [disabled]="this.form.invalid" type="submit" class="btn btn-primary">
+                Guardar
+          </button>   &nbsp; &nbsp;&nbsp;         
+          <button class="btn btn-danger" mat-dialog-close>Cerrar</button>
+        </div> 
+    </form>    
+

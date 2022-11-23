@@ -1,0 +1,15 @@
+.Exito{
+    color: green;
+  }
+  .Errores{
+    color: red;
+  }
+
+  .mat-form-field-label{
+    font-size: 50px;
+
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

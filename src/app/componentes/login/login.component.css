@@ -1,0 +1,38 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .bg-mystilo{
+        background: rgb(132, 0, 255);
+
+  }
+
+  .Exito{
+    color: green;
+  }
+  .Errores{
+    color: red;
+  }
