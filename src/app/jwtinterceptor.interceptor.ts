@@ -18,8 +18,7 @@ export class JwtinterceptorInterceptor implements HttpInterceptor {
     const token = this.CookieService.get('tokenC');  
     const headers = new HttpHeaders ({
       "Authorization": `Bearer ${token}`
-    })       
-    
+    })           
     const reqclone = request.clone({
       headers
     });
